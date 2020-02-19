@@ -10,7 +10,7 @@
     <ion-input placeholder="Nombre Producto" [(ngModel)]="buscar"></ion-input> 
     <ion-input></ion-input>
   </ion-item>
-  <ion-button expand="block" (click)="cambiar_Todos()" (click)="mostrar()">Buscar</ion-button>
+  <ion-button expand="block" (click)="cambiar_Todos()" (click)="mostrar()" (click)="setBusqueda()">Buscar</ion-button>
   <div *ngIf = "Todos == true">
     lista
     <ion-card *ngFor="let item of miBusqueda">

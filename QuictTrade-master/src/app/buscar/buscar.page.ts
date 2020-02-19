@@ -76,13 +76,14 @@ export class BuscarPage implements OnInit {
       
     })
   }
-
-  setBusqueda(objeto : (IObjetos | IMotor | ITecnologia | INmobiliaria),buscar){
-    let ref=this._db.database.ref("usuarios");//referencia al nodo de bocadillos
+//metodo xa meter busqueda en el usuario
+  setBusqueda(objeto : (IObjetos | IMotor | ITecnologia | INmobiliaria)){
+    let ref=this._db.database.ref("busquedas");//referencia al nodo de bocadillos
     let res = ref.push(objeto);//creamos un nuevo nodo con el metodo push y lo inserta en el nodo objetos
     console.log("he insertado " + res.key);
     ref.child(res.key).set({
-      "busqueda" : "-M-xvfM8UhvfKgkcs_oV "+ buscar,
+      "busqueda" : "-M-xvfM8UhvfKgkcs_oV ",
+      "obtejoBuscado" : this.buscar
 
     })
 
