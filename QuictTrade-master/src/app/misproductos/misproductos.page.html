@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-button size="small" (click)="cambiar_Tecnologia()" >Tecnología</ion-button>
+    <div *ngIf = "Tecnologia == true">
+    estoy dentro de tecnologia
+    <div *ngFor="let item of objetosTecnologia">
+      <ion-card-header> 
+        <ion-card-title>objeto {{item.nombre}} {{item.categoria}} ({{item.precio}} €) </ion-card-title>
+      </ion-card-header>
+    </div>
+    </div>
+    <ion-button size="small" (click)="cambiar_Inmobiliaria()">Inmobiliaria</ion-button>
+    <div *ngIf = "Inmobiliaria == true" >
+      estoy dentro de inmobiliaria
+      <div *ngFor="let item of objetosInmobiliaria">
+        <ion-card-header> 
+          <ion-card-title>objeto {{item.nombre}} {{item.categoria}} ({{item.precio}} €) </ion-card-title>
+        </ion-card-header>
+      </div>
+    </div>
+    <ion-button size="small" (click)="cambiar_Motor()">Motor</ion-button>
+    <div *ngIf = "Motor == true" >
+        estoy dentro de motor
+        <div *ngFor="let item of objetosMotor">
+          <ion-card-header> 
+            <ion-card-title>objeto {{item.nombre}} {{item.categoria}} ({{item.precio}} €) </ion-card-title>
+          </ion-card-header>
+        </div>
+    </div>
+    <ion-button size="small" (click)="cambiar_Hogar()">Hogar</ion-button>
+    <div *ngIf = "Hogar == true" >
+        estoy dentro de Hogar
+        <div *ngFor="let item of objetosHogar">
+          <ion-card-header> 
+            <ion-card-title>objeto {{item.nombre}} {{item.categoria}} ({{item.precio}} €) </ion-card-title>
+          </ion-card-header>
+        </div>
+    </div>
+    <ion-button size="small" (click)="cambiar_Todos()">Todos</ion-button>
+    <div *ngIf = "Todos == true" >
+        estoy dentro de Todos
+        <ion-card *ngFor="let item of misProductos">
+    
+          <ion-card-header> 
+              <ion-card-title>objeto {{item.nombre}} {{item.categoria}} ({{item.precio}} €) </ion-card-title>
+          </ion-card-header>
+          
+          <ion-card-content>
+            <ion-label>Descripcion: </ion-label>
+            {{item.descripcion}}
+            {{item.Tecnologia}}
+            {{item.perfectoEstado}}
+            {{item.usado}}
+            {{item.Inmobiliaria}}
+            {{item.metrosDevivienda}}
+            {{item.numeroBanyos}}
+            {{item.numeroHabitacions}}
+            {{item.localidad}}
+            {{item.Motor}}
+            {{item.coche}}
+            {{item.moto}}
+            {{item.Km}}
+            {{item.anyo}}
+          </ion-card-content>
+          <ion-button size="small" (click)="eliminar(item.id)">Eliminar</ion-button>
+          <ion-button size="small" [routerLink]="['/modificar',item.id]">Modificar</ion-button>
+        </ion-card>
+    </div>
+  
+</ion-content>

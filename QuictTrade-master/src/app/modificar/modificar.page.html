@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modificar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor="let item of modificar">
+ 
+  <ion-card-subtitle>
+    <ion-item>
+      <ion-input  [(ngModel)]="nombre">Nombre: {{item.nombre}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Descripcion: {{item.descripcion}}" [(ngModel)]="descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Precio: {{item.precio}}" [(ngModel)]="precio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Categoria: {{item.categoria}}" [(ngModel)]="categoria"></ion-input>
+    </ion-item>
+  </ion-card-subtitle>
+  
+    Categoria Tecnologia
+  
+  
+  <ion-item>
+    <ion-input placeholder="Esta en Perfecto estado  {{item.perfectoEstado}}" [(ngModel)]="perfectoEstado"></ion-input>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label>Esta en perfecto estado</ion-label>
+    <ion-radio  color="success" checked={{item.perfectoEstado}} [(ngModel)]="perfectoEstado"></ion-radio>
+  </ion-item> -->
+  Categoria Motor
+  <!-- <ion-item>
+    <ion-label>es un coche</ion-label>
+    <ion-radio  color="success" checked={{item.coche}} [(ngModel)]="coche"></ion-radio>
+  </ion-item> -->
+  <ion-item>
+    <ion-input placeholder="Es un coche  {{item.coche}}" [(ngModel)]="coche"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Nº de Km {{item.km}}" [(ngModel)]="Km"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Anyo del vehiculo {{item.anyo}}" [(ngModel)]="anyo"></ion-input>
+  </ion-item>
+  categoria Inmobiliaria
+  <ion-item>
+    <ion-input placeholder="Metros cuadrados: {{item.metrosDevivienda}}" [(ngModel)]="metrosDevivienda"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Numero de banyos: {{item.numeroBanyos}}" [(ngModel)]="numeroBanyos"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Numero de habitaciones: {{item.numeroHabitacions}}" [(ngModel)]="numeroHabitacions"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Localidad: {{item.localidad}}" [(ngModel)]="localidad"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="modificarObjeto(item.id,item.Tecnologia,item.Motor,item.Inmobiliaria)">modificar</ion-button>
+
+</ion-content>

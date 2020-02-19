@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <ion-card *ngFor="let item of objetos">
+      <ion-card-header> 
+          <ion-card-title>Nombre objeto {{item.nombre}} ({{item.precio}} €) </ion-card-title>
+          <ion-card-title>Categoria: {{item.categoria}} </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-label>Descripcion: </ion-label>
+        {{item.descripcion}}
+        <ion-button expand="block" [routerLink]="['/details',item.id]">Detalle</ion-button>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
