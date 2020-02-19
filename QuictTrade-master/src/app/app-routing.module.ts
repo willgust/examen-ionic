@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'modificar/:id',
     loadChildren: () => import('./modificar/modificar.module').then( m => m.ModificarPageModule)
   },
+  {
+    path: 'buscar',
+    loadChildren: () => import('./buscar/buscar.module').then( m => m.BuscarPageModule)
+  },
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
 ];
