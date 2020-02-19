@@ -24,7 +24,7 @@ export class ModificarPage implements OnInit {
   Inmobiliaria : boolean;
   ruta : string = "../../assets/ejemplo.jpg";
   width : number = 300;
-  nombre : string;
+  nombre : string ="";
   precio : number = null;
   categoria : string = null;
   descripcion : string = null;
@@ -66,6 +66,9 @@ export class ModificarPage implements OnInit {
   modificarObjeto(id : number,Tecnologia : boolean,Motor : boolean,Inmobiliaria : boolean ){
     console.log("q tiene en el " +id);
     let ref=this._db.database.ref("objetos");
+
+    //quedarte con el objeto que corresopnda a esa id y lo guardas en los campos
+
     ref.orderByChild("id").equalTo(id).on("value", snapshot =>{
       this.objeto=[];
       snapshot.forEach(child =>{

@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'buscar',
     loadChildren: () => import('./buscar/buscar.module').then( m => m.BuscarPageModule)
   },
+  {
+    path: 'detallesbuscar',
+    loadChildren: () => import('./detallesbuscar/detallesbuscar.module').then( m => m.DetallesbuscarPageModule)
+  },
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
 ];
